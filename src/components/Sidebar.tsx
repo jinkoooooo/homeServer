@@ -84,8 +84,8 @@ const BrandIcon = styled.img`
   margin-right: ${(props) => props.theme.spacing(2)}px;
   color: ${(props) => props.theme.sidebar.header.brand.color};
   fill: ${(props) => props.theme.sidebar.header.brand.color};
-  width: 35px;
-  height: 34px;
+  width: 40px;
+  height: 35px;
 `;
 
 const BrandChip = styled(Chip)`
@@ -398,9 +398,9 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
   return (
     <Drawer variant="permanent" {...rest}>
       <Brand component={NavLink} to="/" button>
-        <BrandIcon src="/main-logo.png"/>{" "}
+        {/*<BrandIcon src="/main-logo2.png"/>{" "}*/}
         <Box ml={1}>
-          <Typography component="h6" variant="h6" align="center">Netsphare wcs cloud</Typography>
+          <Typography component="h6" variant="h6" align="center">JG Project Solution</Typography>
         </Box>
       </Brand>
       <Scrollbar>
