@@ -50,7 +50,7 @@ function DashBoard() {
         </Grid>
 
         <Grid item xs={12} lg={4}>
-          우리 이쁜 가람이를 보러 가고싶습니다.!!!!!ㅎㅎ
+          우리 이쁜 가람이를 보러 가고싶습니다.!!!!!ㅎㅎ~~
         </Grid>
       </Grid>
 
