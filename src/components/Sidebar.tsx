@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styled from "styled-components/macro";
-import { rgba } from "polished";
-import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
-import { darken } from "polished";
-import { RouteType, RouteChildType } from "../types/routes";
+import {rgba} from "polished";
+import {NavLink, withRouter, RouteComponentProps} from "react-router-dom";
+import {darken} from "polished";
+import {RouteType, RouteChildType} from "../types/routes";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "../vendor/perfect-scrollbar.css";
 
-import { spacing } from "@material-ui/system";
+import {spacing} from "@material-ui/system";
 
 import {
-  Badge,
-  Box as MuiBox,
-  Chip,
-  Grid,
-  Avatar,
-  Collapse,
-  Drawer as MuiDrawer,
-  List as MuiList,
-  ListItem,
-  ListItemText,
-  Typography,
+    Badge,
+    Box as MuiBox,
+    Chip,
+    Grid,
+    Avatar,
+    Collapse,
+    Drawer as MuiDrawer,
+    List as MuiList,
+    ListItem,
+    ListItemText,
+    Typography,
 } from "@material-ui/core";
 
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
+import {ExpandLess, ExpandMore} from "@material-ui/icons";
 
-import { green } from "@material-ui/core/colors";
+import {green} from "@material-ui/core/colors";
 
 import MenuRoutes from "../routes/MenuRoutes";
 import async from "./Async";
@@ -56,9 +56,9 @@ const Items = styled.div`
 `;
 
 const Brand = styled(ListItem)<{
-  button?: boolean;
-  component?: React.ReactNode;
-  to?: string;
+    button?: boolean;
+    component?: React.ReactNode;
+    to?: string;
 }>`
   font-size: ${(props) => props.theme.typography.h5.fontSize};
   font-weight: ${(props) => props.theme.typography.fontWeightMedium};
@@ -105,12 +105,12 @@ const BrandChip = styled(Chip)`
 `;
 
 type CategoryType = {
-  activeClassName?: string;
-  button?: boolean;
-  onClick?: () => void;
-  to?: string;
-  component?: typeof NavLink;
-  exact?: boolean;
+    activeClassName?: string;
+    button?: boolean;
+    onClick?: () => void;
+    to?: string;
+    component?: typeof NavLink;
+    exact?: boolean;
 };
 
 const Category = styled(ListItem)<CategoryType>`
@@ -134,7 +134,7 @@ const Category = styled(ListItem)<CategoryType>`
 
   &.${(props) => props.activeClassName} {
     background-color: ${(props) =>
-      darken(0.03, props.theme.sidebar.background)};
+    darken(0.03, props.theme.sidebar.background)};
 
     span {
       color: ${(props) => props.theme.sidebar.color};
@@ -160,10 +160,10 @@ const CategoryIconMore = styled(ExpandMore)`
 `;
 
 const Link = styled(ListItem)<{
-  activeClassName: string;
-  component: typeof NavLink;
-  exact: boolean;
-  to: string;
+    activeClassName: string;
+    component: typeof NavLink;
+    exact: boolean;
+    to: string;
 }>`
   padding-left: ${(props) => props.theme.spacing(17.5)}px;
   padding-top: ${(props) => props.theme.spacing(2)}px;
@@ -179,12 +179,12 @@ const Link = styled(ListItem)<{
 
   &:hover {
     background-color: ${(props) =>
-      darken(0.015, props.theme.sidebar.background)};
+    darken(0.015, props.theme.sidebar.background)};
   }
 
   &.${(props) => props.activeClassName} {
     background-color: ${(props) =>
-      darken(0.03, props.theme.sidebar.background)};
+    darken(0.03, props.theme.sidebar.background)};
 
     span {
       color: ${(props) => props.theme.sidebar.color};
@@ -255,7 +255,7 @@ const SidebarFooterBadge = styled(Badge)`
   margin-right: ${(props) => props.theme.spacing(1)}px;
   span {
     background-color: ${(props) =>
-      props.theme.sidebar.footer.online.background};
+    props.theme.sidebar.footer.online.background};
     border: 1.5px solid ${(props) => props.theme.palette.common.white};
     height: 12px;
     width: 12px;
@@ -264,201 +264,200 @@ const SidebarFooterBadge = styled(Badge)`
 `;
 
 type SidebarCategoryPropsType = {
-  name: string;
-  icon: JSX.Element;
-  classes?: string;
-  isOpen?: boolean;
-  isCollapsable: boolean;
-  badge?: string | number;
-  activeClassName?: string;
-  button: true;
-  onClick?: () => void;
-  to?: string;
-  component?: typeof NavLink;
-  exact?: boolean;
+    name: string;
+    icon: JSX.Element;
+    classes?: string;
+    isOpen?: boolean;
+    isCollapsable: boolean;
+    badge?: string | number;
+    activeClassName?: string;
+    button: true;
+    onClick?: () => void;
+    to?: string;
+    component?: typeof NavLink;
+    exact?: boolean;
 };
 
 const SidebarCategory: React.FC<SidebarCategoryPropsType> = ({
-  name,
-  icon,
-  classes,
-  isOpen,
-  isCollapsable,
-  badge,
-  ...rest
-}) => {
-  return (
-    <Category {...rest}>
-      {icon}
-      <CategoryText>{name}</CategoryText>
-      {isCollapsable ? (
-        isOpen ? (
-          <CategoryIconMore />
-        ) : (
-          <CategoryIconLess />
-        )
-      ) : null}
-      {badge ? <CategoryBadge label={badge} /> : ""}
-    </Category>
-  );
+                                                                 name,
+                                                                 icon,
+                                                                 classes,
+                                                                 isOpen,
+                                                                 isCollapsable,
+                                                                 badge,
+                                                                 ...rest
+                                                             }) => {
+    return (
+        <Category {...rest}>
+            {icon}
+            <CategoryText>{name}</CategoryText>
+            {isCollapsable ? (
+                isOpen ? (
+                    <CategoryIconMore/>
+                ) : (
+                    <CategoryIconLess/>
+                )
+            ) : null}
+            {badge ? <CategoryBadge label={badge}/> : ""}
+        </Category>
+    );
 };
 
 type SidebarLinkPropsType = {
-  name: string;
-  to: string;
-  badge?: string | number;
-  icon?: JSX.Element;
+    name: string;
+    to: string;
+    badge?: string | number;
+    icon?: JSX.Element;
 };
 
 const SidebarLink: React.FC<SidebarLinkPropsType> = ({
-  name,
-  to,
-  badge,
-  icon,
-}) => {
-  return (
-    <Link
-      button
-      dense
-      component={NavLink}
-      exact
-      to={to}
-      activeClassName="active"
-    >
-      <LinkText>{name}</LinkText>
-      {badge ? <LinkBadge label={badge} /> : ""}
-    </Link>
-  );
+                                                         name,
+                                                         to,
+                                                         badge,
+                                                         icon,
+                                                     }) => {
+    return (
+        <Link
+            button
+            dense
+            component={NavLink}
+            exact
+            to={to}
+            activeClassName="active"
+        >
+            <LinkText>{name}</LinkText>
+            {badge ? <LinkBadge label={badge}/> : ""}
+        </Link>
+    );
 };
 
 type SidebarPropsType = {
-  classes?: string;
-  staticContext: string;
-  location: {
-    pathname: string;
-  };
-  routes: Array<RouteType>;
-  PaperProps: {
-    style: {
-      width: number;
+    classes?: string;
+    staticContext: string;
+    location: {
+        pathname: string;
     };
-  };
-  variant?: "permanent" | "persistent" | "temporary";
-  open?: boolean;
-  onClose?: () => void;
+    routes: Array<RouteType>;
+    PaperProps: {
+        style: {
+            width: number;
+        };
+    };
+    variant?: "permanent" | "persistent" | "temporary";
+    open?: boolean;
+    onClose?: () => void;
 };
 
 const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
-  classes,
-  staticContext,
-  location,
-  ...rest
-}) => {
-  type tplotOptions = {
-    [key: number]: boolean;
-  };
-  const initOpenRoutes = (): tplotOptions => {
-    /* Open collapse element that matches current url */
-    const pathName = location.pathname;
-    const routes = MenuRoutes();
-    let _routes = {};
+                                                                       classes,
+                                                                       staticContext,
+                                                                       location,
+                                                                       ...rest
+                                                                   }) => {
+    type tplotOptions = {
+        [key: number]: boolean;
+    };
+    const initOpenRoutes = (): tplotOptions => {
+        /* Open collapse element that matches current url */
+        const pathName = location.pathname;
+        const routes = MenuRoutes();
+        let _routes = {};
 
-    routes.forEach((route: RouteType, index) => {
-      const isActive = pathName.indexOf(route.path) === 0;
-      const isOpen = route.open;
-      const isHome = route.containsHome && pathName === "/";
+        routes.forEach((route: RouteType, index) => {
+            const isActive = pathName.indexOf(route.path) === 0;
+            const isOpen = route.open;
+            const isHome = route.containsHome && pathName === "/";
 
-      _routes = Object.assign({}, _routes, {
-        [index]: isActive || isOpen || isHome,
-      });
-    });
+            _routes = Object.assign({}, _routes, {
+                [index]: isActive || isOpen || isHome,
+            });
+        });
 
-    return _routes;
-  };
-  const userAuth = useTypedSelector(state => state.userAuth);
+        return _routes;
+    };
+    const userAuth = useTypedSelector(state => state.userAuth);
 
-  const [openRoutes, setOpenRoutes] = useState(() => initOpenRoutes());
+    const [openRoutes, setOpenRoutes] = useState(() => initOpenRoutes());
 
-  const toggle = (index: number) => {
-    // Collapse all elements
-    Object.keys(openRoutes).forEach(
-      (item) =>
-        openRoutes[index] ||
+    const toggle = (index: number) => {
+        // Collapse all elements
+        Object.keys(openRoutes).forEach(
+            (item) =>
+                openRoutes[index] ||
+                setOpenRoutes((openRoutes) =>
+                    Object.assign({}, openRoutes, {[item]: false})
+                )
+        );
+
+        // Toggle selected element
         setOpenRoutes((openRoutes) =>
-          Object.assign({}, openRoutes, { [item]: false })
-        )
+            Object.assign({}, openRoutes, {[index]: !openRoutes[index]})
+        );
+    };
+
+    return (
+        <Drawer variant="permanent" {...rest}>
+            <Brand component={NavLink} to="/" button>
+                <BrandIcon src="/main-logo2.png"/>{" "}
+                <Box ml={1}>
+                    <Typography component="h6" variant="h6" align="center">JG Project Solution</Typography>
+                </Box>
+            </Brand>
+            <Scrollbar>
+                <List disablePadding>
+                    <Items>
+                        {MenuRoutes().map((category: RouteType, index) => (
+                            <React.Fragment key={index}>
+
+                                {category.children && category.icon ? (
+                                    <React.Fragment key={index}>
+                                        <SidebarCategory
+                                            isOpen={!openRoutes[index]}
+                                            isCollapsable={true}
+                                            name={category.id}
+                                            icon={category.icon}
+                                            button={true}
+                                            onClick={() => toggle(index)}
+                                        />
+
+                                        <Collapse
+                                            in={openRoutes[index]}
+                                            timeout="auto"
+                                            unmountOnExit
+                                        >
+                                            {category.children.map(
+                                                (route: RouteChildType, index: number) => (
+                                                    <SidebarLink
+                                                        key={index}
+                                                        name={route.name}
+                                                        to={route.path}
+                                                        icon={route.icon}
+                                                        badge={route.badge}
+                                                    />
+                                                )
+                                            )}
+                                        </Collapse>
+                                    </React.Fragment>
+                                ) : category.icon ? (
+                                    <SidebarCategory
+                                        isCollapsable={false}
+                                        name={category.id}
+                                        to={category.path}
+                                        activeClassName="active"
+                                        component={NavLink}
+                                        icon={category.icon}
+                                        exact
+                                        button
+                                        badge={category.badge}
+                                    />
+                                ) : null}
+                            </React.Fragment>
+                        ))}
+                    </Items>
+                </List>
+            </Scrollbar>
+        </Drawer>
     );
-
-    // Toggle selected element
-    setOpenRoutes((openRoutes) =>
-      Object.assign({}, openRoutes, { [index]: !openRoutes[index] })
-    );
-  };
-
-  return (
-    <Drawer variant="permanent" {...rest}>
-      <Brand component={NavLink} to="/" button>
-        <BrandIcon src="/main-logo2.png"/>{" "}
-        <Box ml={1}>
-          <Typography component="h6" variant="h6" align="center">JG Project Solution</Typography>
-        </Box>
-      </Brand>
-      <Scrollbar>
-        <List disablePadding>
-          <Items>
-            {MenuRoutes().map((category: RouteType, index) => (
-              <React.Fragment key={index}>
-
-
-                {category.children && category.icon ? (
-                  <React.Fragment key={index}>
-                    <SidebarCategory
-                      isOpen={!openRoutes[index]}
-                      isCollapsable={true}
-                      name={category.id}
-                      icon={category.icon}
-                      button={true}
-                      onClick={() => toggle(index)}
-                    />
-
-                    <Collapse
-                      in={openRoutes[index]}
-                      timeout="auto"
-                      unmountOnExit
-                    >
-                      {category.children.map(
-                        (route: RouteChildType, index: number) => (
-                          <SidebarLink
-                            key={index}
-                            name={route.name}
-                            to={route.path}
-                            icon={route.icon}
-                            badge={route.badge}
-                          />
-                        )
-                      )}
-                    </Collapse>
-                  </React.Fragment>
-                ) : category.icon ? (
-                  <SidebarCategory
-                    isCollapsable={false}
-                    name={category.id}
-                    to={category.path}
-                    activeClassName="active"
-                    component={NavLink}
-                    icon={category.icon}
-                    exact
-                    button
-                    badge={category.badge}
-                  />
-                ) : null}
-              </React.Fragment>
-            ))}
-          </Items>
-        </List>
-      </Scrollbar>
-    </Drawer>
-  );
 };
 
 export default withRouter(Sidebar);

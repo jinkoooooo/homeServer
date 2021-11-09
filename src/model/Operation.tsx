@@ -1,0 +1,14 @@
+export class Operation {
+    public name: string;
+    public address: string;
+    public phoneNo: string;
+    public operQty: number;
+
+    constructor(name: string = "", address: string = "", phoneNo: string = "", operQty: number = 0) {
+        this.name = name;
+        this.address = address;
+        this.phoneNo = phoneNo;
+        this.operQty = operQty;
+    }
+
+}

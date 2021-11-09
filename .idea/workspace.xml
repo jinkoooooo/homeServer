@@ -3,13 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="31946500-75b0-4ad6-afa4-840ba613e647" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/public/Mandarin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/snackbar/ResultSnackbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/snackbar/TransactionSnackbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Operation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/shopping/OperModal.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/theme/myTheme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/exception/Page404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/exception/Page404.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/MenuRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/MenuRoutes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Routes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme/index.ts" afterDir="false" />
@@ -54,7 +58,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -65,11 +69,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components" />
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\pages\shopping" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\public" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\theme" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src" />
-      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components" />
-      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\public" />
@@ -135,7 +139,7 @@
       <workItem from="1626916802102" duration="2133000" />
       <workItem from="1627269742747" duration="652000" />
       <workItem from="1627372467894" duration="16000" />
-      <workItem from="1636431457395" duration="6605000" />
+      <workItem from="1636431457395" duration="9502000" />
     </task>
     <servers />
   </component>

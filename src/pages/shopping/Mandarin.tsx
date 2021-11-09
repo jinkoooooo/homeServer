@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components/macro";
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 import {
     Button,
@@ -17,7 +17,9 @@ import {
 } from "@material-ui/core";
 import {spacing} from "@material-ui/system";
 import {Helmet} from "react-helmet";
-import { StarBorder as StarIcon } from "@material-ui/icons";
+import {StarBorder as StarIcon} from "@material-ui/icons";
+import {OperModal} from "./OperModal";
+import {Operation} from "../../model/Operation";
 
 const CardMedia = styled(MuiCardMedia)`
   height: 220px;
@@ -42,9 +44,11 @@ const Header = styled.div`
 `;
 
 function Mandarin() {
+    const [operModalFlag, setOperModalFlag] = useState(false);
+
     return (
         <React.Fragment>
-            <Helmet title="Mandarin" />
+            <Helmet title="Mandarin"/>
             <Typography variant="h3" gutterBottom display="inline">
                 서귀포감귤
             </Typography>
@@ -56,7 +60,7 @@ function Mandarin() {
                 <Typography>서귀포감귤</Typography>
             </Breadcrumbs>
 
-            <Divider my={6} />
+            <Divider my={6}/>
 
             <Header>
                 <Typography variant="h3" gutterBottom align="center">
@@ -92,9 +96,9 @@ function Mandarin() {
                                 <CardHeader
                                     title="서귀포감귤"
                                     subheader="새콤달콤 유기농(산지직송)"
-                                    titleTypographyProps={{ align: "center" }}
-                                    subheaderTypographyProps={{ align: "center" }}
-                                    action={<StarIcon />}
+                                    titleTypographyProps={{align: "center"}}
+                                    subheaderTypographyProps={{align: "center"}}
+                                    action={<StarIcon/>}
                                     pb={0}
                                     pt={2}
                                 />
@@ -120,18 +124,21 @@ function Mandarin() {
                                     </Price>
                                     <Typography variant="subtitle1" align="center">
                                         1 Box : 10 Kg
-                                        <br />
+                                        <br/>
                                         Size : Medium(중간), 어린아이 주먹크기
-                                        <br />
+                                        <br/>
                                         평균 배송일 3일 소요.
-                                        <br />
+                                        <br/>
                                         (제주도 기상 날씨에 따라 다를 수 있습니다.)
-                                        <br />
+                                        <br/>
                                         문의 : 카톡 id: 3buy3
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button fullWidth variant="contained" color="primary">
+                                    <Button fullWidth variant="contained" color="primary"
+                                            onClick={() => {
+                                                setOperModalFlag(true)
+                                            }}>
                                         구매하기
                                     </Button>
                                 </CardActions>
@@ -140,6 +147,14 @@ function Mandarin() {
                     </Grid>
                 </Grid>
             </Grid>
+
+            <OperModal
+                title="운행 기록 등록"
+                OperationData={new Operation()}
+                onSubmit={() => setOperModalFlag(false)}
+                onClose={() => setOperModalFlag(false)}
+                open={operModalFlag}
+            />
         </React.Fragment>
     );
 }
