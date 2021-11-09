@@ -308,6 +308,7 @@ type SidebarLinkPropsType = {
     to: string;
     badge?: string | number;
     icon?: JSX.Element;
+    onClose: () => void;
 };
 
 const SidebarLink: React.FC<SidebarLinkPropsType> = ({
@@ -315,6 +316,7 @@ const SidebarLink: React.FC<SidebarLinkPropsType> = ({
                                                          to,
                                                          badge,
                                                          icon,
+                                                         onClose,
                                                      }) => {
     return (
         <Link
@@ -324,6 +326,7 @@ const SidebarLink: React.FC<SidebarLinkPropsType> = ({
             exact
             to={to}
             activeClassName="active"
+            onClick={onClose}
         >
             <LinkText>{name}</LinkText>
             {badge ? <LinkBadge label={badge}/> : ""}
@@ -345,7 +348,7 @@ type SidebarPropsType = {
     };
     variant?: "permanent" | "persistent" | "temporary";
     open?: boolean;
-    onClose?: () => void;
+    onClose: () => void;
 };
 
 const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
@@ -373,6 +376,7 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
             });
         });
 
+
         return _routes;
     };
     const userAuth = useTypedSelector(state => state.userAuth);
@@ -394,6 +398,7 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
             Object.assign({}, openRoutes, {[index]: !openRoutes[index]})
         );
     };
+
 
     return (
         <Drawer variant="permanent" {...rest}>
@@ -417,7 +422,7 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
                                             name={category.id}
                                             icon={category.icon}
                                             button={true}
-                                            onClick={() => toggle(index)}
+                                            onClick={() => {toggle(index);}}
                                         />
 
                                         <Collapse
@@ -433,6 +438,7 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
                                                         to={route.path}
                                                         icon={route.icon}
                                                         badge={route.badge}
+                                                        onClose={rest.onClose}
                                                     />
                                                 )
                                             )}

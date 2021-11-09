@@ -106,10 +106,11 @@ const Dashboard: React.FC<DashboardPropsType> = ({
           />
         </Hidden>
         <Hidden smDown implementation="css">
-          <Sidebar
+          {/*<Sidebar
             routes={routes}
             PaperProps={{style: {width: drawerWidth}}}
-          />
+            onClose={() => {}}
+          />*/}
         </Hidden>
       </Drawer>
       <AppContent>

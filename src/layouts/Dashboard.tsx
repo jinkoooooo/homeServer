@@ -105,6 +105,7 @@ const Dashboard: React.FC<DashboardPropsType> = ({
           <Sidebar
             routes={routes}
             PaperProps={{style: {width: drawerWidth}}}
+            onClose={handleDrawerToggle}
           />
         </Hidden>
       </Drawer>

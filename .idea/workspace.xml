@@ -10,7 +10,9 @@
       <change afterPath="$PROJECT_DIR$/src/theme/myTheme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Dashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/exception/Page404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/exception/Page404.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" afterDir="false" />
@@ -139,7 +141,7 @@
       <workItem from="1626916802102" duration="2133000" />
       <workItem from="1627269742747" duration="652000" />
       <workItem from="1627372467894" duration="16000" />
-      <workItem from="1636431457395" duration="9502000" />
+      <workItem from="1636431457395" duration="12299000" />
     </task>
     <servers />
   </component>
