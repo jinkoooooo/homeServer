@@ -72,7 +72,7 @@ export const MenuRoutes = (menus: UserMenu[]) => {
 
     routeMenus.push({
       id: "DashBoard",
-      path: "/homeServer",
+      path: "/",
       header: "Test",
       icon: <Sliders/>,
       component: Dashboard,
