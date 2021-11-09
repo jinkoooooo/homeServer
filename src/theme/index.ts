@@ -5,9 +5,10 @@ import overrides from "./overrides";
 import breakpoints from "./breakpoints";
 import props from "./props";
 import shadows from "./shadows";
+import myTheme from "./myTheme";
 
 const createTheme = (name: string) => {
-  let themeConfig = variants.find((variant) => variant.name === name);
+  let themeConfig = myTheme.find((variant) => variant.name === name);
 
   if (!themeConfig) {
     console.warn(new Error(`The theme ${name} is not valid`));

@@ -37,7 +37,7 @@ function Page404() {
 
       <Button
         component={Link}
-        to="/homeServer"
+        to="/"
         variant="contained"
         color="secondary"
         mt={2}

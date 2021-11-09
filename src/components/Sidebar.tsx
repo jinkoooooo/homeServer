@@ -360,7 +360,7 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
   const initOpenRoutes = (): tplotOptions => {
     /* Open collapse element that matches current url */
     const pathName = location.pathname;
-    const routes = MenuRoutes(userAuth.menus);
+    const routes = MenuRoutes();
     let _routes = {};
 
     routes.forEach((route: RouteType, index) => {
@@ -398,7 +398,7 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
   return (
     <Drawer variant="permanent" {...rest}>
       <Brand component={NavLink} to="/" button>
-        {/*<BrandIcon src="/main-logo2.png"/>{" "}*/}
+        <BrandIcon src="/main-logo2.png"/>{" "}
         <Box ml={1}>
           <Typography component="h6" variant="h6" align="center">JG Project Solution</Typography>
         </Box>
@@ -406,7 +406,7 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
       <Scrollbar>
         <List disablePadding>
           <Items>
-            {MenuRoutes(userAuth.menus).map((category: RouteType, index) => (
+            {MenuRoutes().map((category: RouteType, index) => (
               <React.Fragment key={index}>
 
 
