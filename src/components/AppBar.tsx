@@ -9,12 +9,16 @@ import {
   InputBase,
   AppBar as MuiAppBar,
   IconButton as MuiIconButton,
-  Toolbar,
+  Toolbar, MenuItem,
 } from "@material-ui/core";
 
 import { Menu as MenuIcon } from "@material-ui/icons";
 
 import UserDropdown from "./UserDropdown";
+import {Link} from "react-router-dom";
+import KakaoLogOut from "../pages/login/KakaoLogOut";
+import KakaoLogin from "../pages/login/KakaoLogin";
+import {useTypedSelector} from "../redux/reducers";
 
 const AppBar = styled(MuiAppBar)`
   background: ${(props) => props.theme.palette.background.default};
@@ -78,41 +82,48 @@ type AppBarProps = {
   onDrawerToggle: React.MouseEventHandler<HTMLElement>;
 };
 
-const AppBarComponent: React.FC<AppBarProps> = ({ onDrawerToggle }) => (
-  <React.Fragment>
-    <AppBar position="sticky" elevation={0}>
-      <Toolbar>
-        <Grid container alignItems="center">
-          <Hidden mdUp>
-            <Grid item>
-              <IconButton
-                color="inherit"
-                aria-label="Open drawer"
-                onClick={onDrawerToggle}
-              >
-                <MenuIcon />
-              </IconButton>
-            </Grid>
-          </Hidden>
-          <Grid item>
-            {/*<Search>
+const AppBarComponent: React.FC<AppBarProps> = ({ onDrawerToggle }) => {
+
+  const userAuth = useTypedSelector(state => state.userAuth);
+
+  return (
+      <React.Fragment>
+        <AppBar position="sticky" elevation={0}>
+          <Toolbar>
+            <Grid container alignItems="center">
+              <Hidden mdUp>
+                <Grid item>
+                  <IconButton
+                      color="inherit"
+                      aria-label="Open drawer"
+                      onClick={onDrawerToggle}
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                </Grid>
+              </Hidden>
+              <Grid item>
+                {/*<Search>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
               <Input placeholder="Search topics" />
             </Search>*/}
-          </Grid>
-          <Grid item xs />
-          <Grid item>
-            {/*<MessagesDropdown />
+              </Grid>
+              <Grid item xs />
+              <Grid item>
+                {/*<MessagesDropdown />
             <NotificationsDropdown />
             <LanguagesDropdown />*/}
-            <UserDropdown />
-          </Grid>
-        </Grid>
-      </Toolbar>
-    </AppBar>
-  </React.Fragment>
-);
+                {/*<UserDropdown />*/}
+                {userAuth.isAuth ? <UserDropdown />
+                    : <MenuItem><KakaoLogin/></MenuItem> }
+              </Grid>
+            </Grid>
+          </Toolbar>
+        </AppBar>
+      </React.Fragment>
+  )
+}
 
 export default withTheme(AppBarComponent);

@@ -1,12 +1,9 @@
 import React from "react";
-import {UserMenu} from "../../model/Menu";
+import {AuthData} from "../../model/User";
 
 export interface UserAuth {
-    userid: string
-    username: string,
-    accessToken: string,
     isAuth: boolean,
-    menus: UserMenu[]
+    user: AuthData|null,
 }
 
 export const USER_LOGIN = "USER_LOGIN";
@@ -39,22 +36,16 @@ export function userLogout() : UserAuthActionTypes {
 //
 //  상태 초기값 설정
 const initialState: UserAuth = {
-    userid: "",
-    username: "",
-    accessToken: "",
     isAuth: false,
-    menus: []
+    user: null,
 }
 
 export function userAuthReducer(state= initialState, action : UserAuthActionTypes) : UserAuth {
 
     switch (action.type) {
         case USER_LOGIN: return {
-            userid: action.payload.userid,
-            username: action.payload.username,
-            accessToken: action.payload.accessToken,
             isAuth: true,
-            menus: action.payload.menus
+            user: action.payload.user
         }
         case USER_LOGOUT: return initialState;
         default:

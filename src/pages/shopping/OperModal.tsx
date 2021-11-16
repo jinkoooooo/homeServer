@@ -67,12 +67,26 @@ export function OperModal(props: OperModal) {
     const {register, reset, watch, errors, setValue, setError, clearError, handleSubmit} = useForm();
     const onSubmit = handleSubmit(({startDateTime, arriveDateTime, startOdometer, arriveOdometer}) => {
 
+        window.Kakao.Link.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '오늘의 디저트',
+                description: '아메리카노, 빵, 케익',
+                imageUrl:
+                    'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+                link: {
+                    mobileWebUrl: 'https://developers.kakao.com',
+                    androidExecutionParams: 'test',
+                },
+            }
+        });
+
         confirm(null);
         close();
     });
 
     useEffect(() => {
-
+        window.Kakao.init(process.env.REACT_APP_KAKAO);
     }, []);
 
 
