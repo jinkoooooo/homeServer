@@ -116,8 +116,8 @@ const AppBarComponent: React.FC<AppBarProps> = ({ onDrawerToggle }) => {
             <NotificationsDropdown />
             <LanguagesDropdown />*/}
                 {/*<UserDropdown />*/}
-                {userAuth.isAuth ? <UserDropdown />
-                    : <MenuItem><KakaoLogin/></MenuItem> }
+                {/*{userAuth.isAuth ? <UserDropdown />
+                    : <MenuItem><KakaoLogin/></MenuItem> }*/}
               </Grid>
             </Grid>
           </Toolbar>

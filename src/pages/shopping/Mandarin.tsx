@@ -149,7 +149,7 @@ function Mandarin() {
             </Grid>
 
             <OperModal
-                title="운행 기록 등록"
+                title="주문서 작성"
                 OperationData={new Operation()}
                 onSubmit={() => setOperModalFlag(false)}
                 onClose={() => setOperModalFlag(false)}

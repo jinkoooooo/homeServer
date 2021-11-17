@@ -19,7 +19,11 @@ const ButtonWrap = Styled.div`
 const KakaoLogOut = () => {
     const dispatcher = useDispatch();
 
-
+    useEffect(() => {
+        if(!window.Kakao.isInitialized()){
+            window.Kakao.init(process.env.REACT_APP_KAKAO);
+        }
+    }, []);
 
     const logOutWithKakao = () => {
         try {

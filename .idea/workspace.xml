@@ -2,22 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31946500-75b0-4ad6-afa4-840ba613e647" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/kakao/kakao_login_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/User.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/KakaoLogOut.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/KakaoLogin.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/IApi.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/OperApi.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/kakao/Post.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/kakao/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Operation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Operation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/KakaoLogOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/KakaoLogOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/KakaoLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/KakaoLogin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/shopping/OperModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/shopping/OperModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/authStore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/authStore.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +29,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -59,7 +59,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/login" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/개인자료/개인 라이브러리/material-app-3-1-0-typescript-pf479s" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -70,11 +71,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components\kakao" />
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\api" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\pages\login" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\model" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer" />
-      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components" />
-      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\pages\shopping" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components\kakao" />
@@ -82,15 +83,13 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,7 +146,10 @@
       <workItem from="1636506144394" duration="1794000" />
       <workItem from="1636524293124" duration="1297000" />
       <workItem from="1636963560420" duration="4173000" />
-      <workItem from="1637024264274" duration="4674000" />
+      <workItem from="1637024264274" duration="4924000" />
+      <workItem from="1637029702896" duration="4388000" />
+      <workItem from="1637052767568" duration="350000" />
+      <workItem from="1637114756488" duration="15517000" />
     </task>
     <servers />
   </component>

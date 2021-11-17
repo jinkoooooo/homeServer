@@ -44,6 +44,16 @@ const KakaoLogin = () => {
                                 user: res,
                             })
                         );
+
+                        window.Kakao.API.request({
+                            url: '/oauth/authorize?client_id={REST_API_KEY}&redirect_uri={REDIRECT_URI}&response_type=code&scope={required_scopes.join(\',\')}',
+                            success: function(res:any) {
+                                alert('success: ' + JSON.stringify(res))
+                            },
+                            fail: function(err:any) {
+                                alert('error: ' + JSON.stringify(err))
+                            },
+                        });
                     },
                     fail: (err: any) => {
                         console.error(err);
