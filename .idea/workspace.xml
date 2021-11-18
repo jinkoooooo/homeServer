@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31946500-75b0-4ad6-afa4-840ba613e647" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/Mandarin2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" afterDir="false" />
     </list>
@@ -73,19 +71,6 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -142,7 +127,9 @@
       <workItem from="1637029702896" duration="4388000" />
       <workItem from="1637052767568" duration="350000" />
       <workItem from="1637114756488" duration="19557000" />
-      <workItem from="1637218780804" duration="6205000" />
+      <workItem from="1637218780804" duration="6255000" />
+      <workItem from="1637225956742" duration="168000" />
+      <workItem from="1637227382799" duration="33000" />
     </task>
     <servers />
   </component>
