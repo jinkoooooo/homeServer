@@ -79,6 +79,8 @@ function Mandarin() {
                 </Typography>
                 <Typography variant="subtitle1" gutterBottom align="center">
                     - ↓ 아래에서 원클릭 구매하시면 개별 연락 드립니다. ↓ -
+                </Typography><Typography variant="subtitle1" gutterBottom align="center">
+                    - ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -
                 </Typography>
             </Header>
 
