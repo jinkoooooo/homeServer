@@ -78,7 +78,7 @@ function Mandarin() {
                     2021.11월 ~ 2022.01월 까지 절찬리 판매합니다.★
                 </Typography>
                 <Typography variant="subtitle1" gutterBottom align="center">
-                    - 아래에서 원클릭 구매하시면 개별 연락 드립니다. -
+                    - ↓ 아래에서 원클릭 구매하시면 개별 연락 드립니다. ↓ -
                 </Typography>
             </Header>
 
