@@ -30,6 +30,7 @@
     "@types/recharts": "^1.8.19",
     "axios": "0.21.1",
     "axios-mock-adapter": "1.19.0",
+    "open-color": "^1.7.0",
     "polished": "4.0.5",
     "react": "^17.0.2",
     "react-app-polyfill": "2.0.0",

@@ -21,6 +21,8 @@ import {TransactionSnackbar, TransactionSnackbarPropType} from "../../components
 import {Operation} from "../../model/Operation";
 import {OperApi} from "../../api/OperApi";
 import DaumPostcode from 'react-daum-postcode';
+import {setCurrentPageState} from "../../redux/reducers/pageStore";
+
 
 const useStyles = makeStyles((theme) => ({
     searchWidth: {
@@ -65,6 +67,8 @@ export function OperModal(props: OperModal) {
         setErrorSnackbarState({...errorSnackbarState, open: false})
     }, [errorSnackbarState])
 
+    const [boxQty, setBoxQty] = useState(0);
+
     const dispatcher = useDispatch();
 
 
@@ -72,24 +76,52 @@ export function OperModal(props: OperModal) {
 
     const onSubmit = handleSubmit(({name, address, addressDetail, phoneNo, operQty}) => {
 
-        address += ", " + addressDetail;
-        let createOper:Operation = new Operation(name, address, phoneNo, operQty);
-
         let patternPhone = /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/;
+        let nameCheck = /^[가-힣]+$/;
 
-        if(!patternPhone.test(phoneNo))
-        {
+        if (!nameCheck.test(name)) {
+            alert('이름을 확인 해주세요');
+            return;
+        }
+
+        address += ", " + addressDetail;
+
+        if (phoneNo.length === 11) {
+            phoneNo = phoneNo.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+        }
+        if (phoneNo.length === 13) {
+            phoneNo = phoneNo.replace(/-/g, '').replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+        }
+
+
+        if (!patternPhone.test(phoneNo)) {
             alert('핸드폰 번호를 확인 해주세요');
             return;
         }
 
+        let createOper: Operation = new Operation(name, address, phoneNo, operQty);
+
+        let operMessage = "\n이름 : " + name + "\n폰번호 : " + address + "\n주소 : " + phoneNo + "\n수량 : " + operQty
+
+        // loading 플레그 변경
+        dispatcher(setCurrentPageState({isLoading: true}));
+
         OperCreate(createOper)
             .then(res => {
                 console.log(res);
+                if (res.data != null) {
+                    alert('주문완료' + operMessage + "\n주문번호 : " + res.data);
+                } else {
+                    alert('주문실패 - ' + res);
+                }
             })
             .catch(err => {
+                alert('주문실패 - ' + err);
                 console.log(err);
-            });
+            }).finally(() => {
+            // loading 플레그 변경
+            dispatcher(setCurrentPageState({isLoading: false}));
+        });
 
         close();
     });
@@ -101,6 +133,7 @@ export function OperModal(props: OperModal) {
     }
 
     const classes = useStyles();
+
 
     // DaumPostCode
     const [isDaumPost, setIsDaumPost] = useState(false);
@@ -120,7 +153,7 @@ export function OperModal(props: OperModal) {
         setIsDaumPost(!isDaumPost);
     }
 
-    const handleComplete = (data:any) => {
+    const handleComplete = (data: any) => {
         let fullAddress = data.address;
         let extraAddress = '';
 
@@ -157,105 +190,112 @@ export function OperModal(props: OperModal) {
                         <Typography gutterBottom>{props.title}</Typography>
                     </DialogTitle>
                     <DialogContent>
-                        {
-                            isDaumPost ?
-                                <DaumPostcode
-                                    onComplete={handleComplete}
-                                    autoClose
-                                    width={width}
-                                    height={height}
+                        <Grid container item xs={12} spacing={1} justify="flex-start">
+
+                            {
+                                isDaumPost ?
+                                    <Grid item xs={12} sm={12}>
+                                        <DaumPostcode
+                                            onComplete={handleComplete}
+                                            autoClose
+                                            width={width}
+                                            height={height}
+                                        />
+                                    </Grid>
+                                    :
+                                    <>
+                                        <Grid item xs={4} sm={4}>
+                                            <label>배송 주소</label>
+                                        </Grid>
+                                        <Grid item xs={8} sm={8}>
+                                            <TextField
+                                                id="address"
+                                                name="address"
+                                                variant="outlined"
+                                                inputRef={register}
+                                                value={props.OperationData.address}
+                                                required={true}
+                                                size="small"
+                                                className={classes.searchWidth}
+                                                multiline
+                                                rows={2}
+                                                onClick={handleOpenPost}
+                                                aria-readonly={true}
+                                            />
+                                        </Grid>
+                                        <Grid item xs={4} sm={4}>
+                                            <label>상세 주소</label>
+                                        </Grid>
+                                        <Grid item xs={8} sm={8}>
+                                            <TextField
+                                                id="addressDetail"
+                                                name="addressDetail"
+                                                variant="outlined"
+                                                inputRef={register}
+                                                required={false}
+                                                size="small"
+                                                className={classes.searchWidth}
+                                                multiline
+                                            />
+                                        </Grid>
+                                    </>
+
+                            }
+
+                            <Grid item xs={4} sm={4}>
+                                <label>주문자 명</label>
+                            </Grid>
+                            <Grid item xs={8} sm={8}>
+                                <TextField
+                                    id="name"
+                                    name="name"
+                                    variant="outlined"
+                                    inputRef={register}
+                                    required={true}
+                                    defaultValue={props.OperationData.name}
+                                    size="small"
+                                    className={classes.searchWidth}
+                                    multiline
+                                    /*onChange={(event) => {
+                                        props.OperationData.name = event.target.value;
+                                    }}*/
                                 />
-                                :
-                                <Grid container item xs={12} spacing={1} justify="flex-start">
-                                    <Grid item xs={4} sm={4}>
-                                        <label>배송 주소</label>
-                                    </Grid>
-                                    <Grid item xs={8} sm={8}>
-                                        <TextField
-                                            id="address"
-                                            name="address"
-                                            variant="outlined"
-                                            inputRef={register}
-                                            value={props.OperationData.address}
-                                            required={true}
-                                            size="small"
-                                            className={classes.searchWidth}
-                                            multiline
-                                            rows={2}
-                                            onClick={handleOpenPost}
-                                            aria-readonly={true}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={4} sm={4}>
-                                    </Grid>
-                                    <Grid item xs={8} sm={8}>
-                                        <TextField
-                                            id="addressDetail"
-                                            name="addressDetail"
-                                            variant="outlined"
-                                            inputRef={register}
-                                            required={true}
-                                            size="small"
-                                            className={classes.searchWidth}
-                                            multiline
-                                        />
-                                    </Grid>
+                            </Grid>
 
-                                    <Grid item xs={4} sm={4}>
-                                        <label>주문자 명</label>
-                                    </Grid>
-                                    <Grid item xs={8} sm={8}>
-                                        <TextField
-                                            id="name"
-                                            name="name"
-                                            variant="outlined"
-                                            inputRef={register}
-                                            required={true}
-                                            defaultValue={props.OperationData.name}
-                                            size="small"
-                                            className={classes.searchWidth}
-                                            multiline
-                                            /*onChange={(event) => {
-                                                props.OperationData.name = event.target.value;
-                                            }}*/
-                                        />
-                                    </Grid>
+                            <Grid item xs={4} sm={4}>
+                                <label>폰번호</label>
+                            </Grid>
+                            <Grid item xs={8} sm={8}>
+                                <TextField
+                                    id="phoneNo"
+                                    name="phoneNo"
+                                    variant="outlined"
+                                    inputRef={register}
+                                    required={true}
+                                    defaultValue={props.OperationData.phoneNo}
+                                    size="small"
+                                    className={classes.searchWidth}
+                                    multiline
+                                />
+                            </Grid>
 
-                                    <Grid item xs={4} sm={4}>
-                                        <label>폰번호</label>
-                                    </Grid>
-                                    <Grid item xs={8} sm={8}>
-                                        <TextField
-                                            id="phoneNo"
-                                            name="phoneNo"
-                                            variant="outlined"
-                                            inputRef={register}
-                                            required={true}
-                                            defaultValue={props.OperationData.phoneNo}
-                                            size="small"
-                                            className={classes.searchWidth}
-                                            multiline
-                                        />
-                                    </Grid>
-
-                                    <Grid item xs={4} sm={4}>
-                                        <label>주문 수량</label>
-                                    </Grid>
-                                    <Grid item xs={8} sm={8}>
-                                        <TextField
-                                            id="operQty"
-                                            name="operQty"
-                                            variant="outlined"
-                                            inputRef={register}
-                                            required={true}
-                                            defaultValue={props.OperationData.operQty}
-                                            size="small"
-                                            className={classes.searchWidth}
-                                            multiline
-                                        />
-                                    </Grid>
-                                </Grid>
-                        }
+                            <Grid item xs={4} sm={4}>
+                                <label>주문 수량</label>
+                            </Grid>
+                            <Grid item xs={8} sm={8}>
+                                <TextField
+                                    id="operQty"
+                                    name="operQty"
+                                    variant="outlined"
+                                    inputRef={register}
+                                    required={true}
+                                    defaultValue={props.OperationData.operQty}
+                                    size="small"
+                                    className={classes.searchWidth}
+                                    multiline
+                                />
+                            </Grid>
+                        </Grid>
                     </DialogContent>
                     {
                         isDaumPost ?

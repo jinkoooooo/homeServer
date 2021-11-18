@@ -5,7 +5,7 @@ export class Operation {
     public phoneNo: string;
     public operQty: number;
 
-    constructor(name: string = "", address: string = "", phoneNo: string = "", operQty: number = 0) {
+    constructor(name: string = "", address: string = "", phoneNo: string = "", operQty: number = 1) {
         this.id = "0";
         this.name = name;
         this.address = address;

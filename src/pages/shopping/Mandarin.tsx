@@ -20,6 +20,8 @@ import {Helmet} from "react-helmet";
 import {StarBorder as StarIcon} from "@material-ui/icons";
 import {OperModal} from "./OperModal";
 import {Operation} from "../../model/Operation";
+import {LoadingProgressBar} from "../../components/ProgressBar";
+import {useTypedSelector} from "../../redux/reducers";
 
 const CardMedia = styled(MuiCardMedia)`
   height: 220px;
@@ -45,6 +47,8 @@ const Header = styled.div`
 
 function Mandarin() {
     const [operModalFlag, setOperModalFlag] = useState(false);
+
+    const pageState = useTypedSelector(state => state.pageState);
 
     return (
         <React.Fragment>
@@ -155,6 +159,7 @@ function Mandarin() {
                 onClose={() => setOperModalFlag(false)}
                 open={operModalFlag}
             />
+            <LoadingProgressBar isOpen={pageState.isLoading}/>
         </React.Fragment>
     );
 }

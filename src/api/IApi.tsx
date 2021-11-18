@@ -8,8 +8,12 @@ const authUrl = process.env.REACT_APP_AUTH_SERVER_URL;
 export default function serverApi() {
     return axios.create({
         'baseURL': authUrl,
+
+        
         'headers': {
-            'Content-Type' : 'application/json'
+            'Content-Type' : 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*'
         }
     });
 }
