@@ -9,6 +9,7 @@ export default function serverApi() {
     return axios.create({
         'baseURL': authUrl,
 
+        'timeout': 1000*60*5,
         
         'headers': {
             'Content-Type' : 'application/json',
