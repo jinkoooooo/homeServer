@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31946500-75b0-4ad6-afa4-840ba613e647" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/shopping/OperSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/MenuRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/MenuRoutes.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +130,7 @@
       <workItem from="1637225956742" duration="168000" />
       <workItem from="1637227382799" duration="62000" />
       <workItem from="1637283889572" duration="2962000" />
-      <workItem from="1638495321339" duration="1338000" />
+      <workItem from="1638495321339" duration="2150000" />
     </task>
     <servers />
   </component>
