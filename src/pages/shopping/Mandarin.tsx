@@ -86,17 +86,15 @@ function Mandarin() {
                 <Grid item xs={12} lg={10}>
                     <Grid container spacing={6} alignItems="flex-end">
                         <Grid item xs={12} md={6}>
-                            <Card p={8}>
-                                <CardContent>
-                                    <CardMedia
-                                        image={"/Mandarin.jpg"}
-                                        title="Contemplative Reptile"
-                                    />
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
                             <Card p={5}>
+                                <CardActions>
+                                    <Button fullWidth variant="contained" color="primary"
+                                            onClick={() => {
+                                                setOperModalFlag(true)
+                                            }}>
+                                        구매하기
+                                    </Button>
+                                </CardActions>
                                 <CardHeader
                                     title="서귀포감귤"
                                     subheader="새콤달콤 유기농(산지직송)"
@@ -138,14 +136,16 @@ function Mandarin() {
                                         문의 : 카톡 id: 3buy3
                                     </Typography>
                                 </CardContent>
-                                <CardActions>
-                                    <Button fullWidth variant="contained" color="primary"
-                                            onClick={() => {
-                                                setOperModalFlag(true)
-                                            }}>
-                                        구매하기
-                                    </Button>
-                                </CardActions>
+                            </Card>
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <Card p={8}>
+                                <CardContent>
+                                    <CardMedia
+                                        image={"/Mandarin.jpg"}
+                                        title="Contemplative Reptile"
+                                    />
+                                </CardContent>
                             </Card>
                         </Grid>
                     </Grid>

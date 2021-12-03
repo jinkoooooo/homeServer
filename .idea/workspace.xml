@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31946500-75b0-4ad6-afa4-840ba613e647" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/shopping/OperSearch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/shopping/Mandarin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/MenuRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/MenuRoutes.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/개인자료/개인 라이브러리/material-app-3-1-0-typescript-pf479s" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -58,11 +61,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\pages\shopping" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\pages\common" />
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components\kakao" />
-      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\정진구\IdeaProjects\homeServer\public" />
@@ -129,7 +132,9 @@
       <workItem from="1637114756488" duration="19557000" />
       <workItem from="1637218780804" duration="6255000" />
       <workItem from="1637225956742" duration="168000" />
-      <workItem from="1637227382799" duration="33000" />
+      <workItem from="1637227382799" duration="62000" />
+      <workItem from="1637283889572" duration="2962000" />
+      <workItem from="1638495321339" duration="1338000" />
     </task>
     <servers />
   </component>
