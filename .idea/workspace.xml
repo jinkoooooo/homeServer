@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="31946500-75b0-4ad6-afa4-840ba613e647" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1rFOhLZzzSAAna6fRHrx14dqGH8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/project/homeServer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\project\\homeServer\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\pages\shopping" />
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components" />
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src" />
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\pages\common" />
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components\kakao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\public" />
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\redux\reducers" />
+      <recent name="C:\Users\정진구\IdeaProjects\homeServer\src\components\kakao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\jjg42\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31946500-75b0-4ad6-afa4-840ba613e647" name="Default Changelist" comment="" />
+      <created>1618568488816</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618568488816</updated>
+      <workItem from="1618568491868" duration="1898000" />
+      <workItem from="1623730707018" duration="26000" />
+      <workItem from="1623731816117" duration="312000" />
+      <workItem from="1623819486535" duration="368000" />
+      <workItem from="1623824744346" duration="26000" />
+      <workItem from="1623825793130" duration="3071000" />
+      <workItem from="1626758128071" duration="2649000" />
+      <workItem from="1626765109144" duration="6907000" />
+      <workItem from="1626916802102" duration="2133000" />
+      <workItem from="1627269742747" duration="652000" />
+      <workItem from="1627372467894" duration="16000" />
+      <workItem from="1636431457395" duration="12384000" />
+      <workItem from="1636506144394" duration="1794000" />
+      <workItem from="1636524293124" duration="1297000" />
+      <workItem from="1636963560420" duration="4173000" />
+      <workItem from="1637024264274" duration="4924000" />
+      <workItem from="1637029702896" duration="4388000" />
+      <workItem from="1637052767568" duration="350000" />
+      <workItem from="1637114756488" duration="19557000" />
+      <workItem from="1637218780804" duration="6255000" />
+      <workItem from="1637225956742" duration="168000" />
+      <workItem from="1637227382799" duration="62000" />
+      <workItem from="1637283889572" duration="2962000" />
+      <workItem from="1638495321339" duration="2150000" />
+      <workItem from="1692013416073" duration="636000" />
+      <workItem from="1692043514350" duration="823000" />
+      <workItem from="1692044566346" duration="98000" />
+      <workItem from="1692117157138" duration="22000" />
+      <workItem from="1692117975599" duration="384000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
