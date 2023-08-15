@@ -32,7 +32,7 @@ function DashBoard() {
 
       <Grid container spacing={6}>
         <Grid item xs={12} sm={12} md={6} lg={3} xl>
-          안녕하세요. 정진구의 프로필 사이트입니다. node 변경
+          안녕하세요. 정진구의 프로필 사이트입니다. node 변경 2
         </Grid>
 
         <Grid item xs={12} sm={12} md={6} lg={3} xl>
